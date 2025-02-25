@@ -14,8 +14,11 @@ The SDK will be shipped as a zip file. extract it in your drive and then run `in
 Install hardware into PC and ensure that PolarFire Driver is installed and the board can be seen in device manager as a working board.
 # Installing required software
 1. To build software in windows, we support [Visual Studio](https://visualstudio.microsoft.com/)   
-1. We use [CMake](https://cmake.org/) extensively in our documentation and it is required  to install it. After installation, ensure that cmake is added to the [windows path](https://www.sundancedsp.com/introducing-the-fmc-mipi-6/). CMake by default is installed in ```C:\Program Files\CMake\bin``` and this folder should be added to the windows path.    
-1. It is also recommended to install [vcpkg](https://vcpkg.io/en/) for advanced package management. After downloading and installing this package manager, set ```VCPKG_ROOT``` environment variable to point to the folder that this package manager is installed. 
+1. We use [CMake](https://cmake.org/) extensively in our documentation and it is required  to install it.    
+   After installation, ensure that cmake is added to the [windows path](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/). CMake by default is installed in ```C:\Program Files\CMake\bin``` and this folder should be added to the windows path.    
+2. It is also recommended to install [vcpkg](https://vcpkg.io/en/) for advanced package management.    
+   To install vcpks, follow step 1 in this documentation: [Set up vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-cmd)   
+   After downloading and installing this package manager, set ```VCPKG_ROOT``` environment variable to point to the folder that this package manager is installed. 
    
    For example, if the vcpkg is installed in ```d:\Local\vcpkg``` the environmental variable can se set using this command in command prompt window: ```setx VCPKG_ROOT d:\Local\vcpkg```   
 ## Check installed software.
