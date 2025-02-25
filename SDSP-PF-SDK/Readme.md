@@ -3,7 +3,7 @@ This SDK allow user to work with PolarFire based boards from a windows based hos
 The main features of this SDK is presented here:    
 
 1. Easy enumerate the PolarFire based board on the host PCIe bus. (Only Boards made by Sundance DSP is supported)
-2. find information about each board such as their bus number, board model and several other information.
+2. Find information about each board such as their bus number, board model and several other information.
 3. Accessing LSRAM and DDR4 memory of the board using direct access (suitable for accessing a few memory position) and DMA access (suitable when the data required to be transfer is significant) 
 4. Sample code to show how to enumerate the devices and access their resources.
 
@@ -14,8 +14,16 @@ The SDK will be shipped as a zip file. extract it in your drive and then run `in
 Install hardware into PC and ensure that PolarFire Driver is installed and the board can be seen in device manager as a working board.
 # Installing required software
 1. To build software in windows, we support [Visual Studio](https://visualstudio.microsoft.com/)   
-1. We use [CMake](https://cmake.org/) extensively in our documentation and it is required  to install it   
-1. It is also recommended to install [vcpkg](https://vcpkg.io/en/) for advanced package management.   
+1. We use [CMake](https://cmake.org/) extensively in our documentation and it is required  to install it. After installation, ensure that cmake is added to the [windows path](https://www.sundancedsp.com/introducing-the-fmc-mipi-6/). CMake by default is installed in ```C:\Program Files\CMake\bin``` and this folder should be added to the windows path.    
+1. It is also recommended to install [vcpkg](https://vcpkg.io/en/) for advanced package management. After downloading and installing this package manager, set ```VCPKG_ROOT``` environment variable to point to the folder that this package manager is installed. 
+   
+   For example, if the vcpkg is installed in ```d:\Local\vcpkg``` the environmental variable can se set using this command in command prompt window: ```setx VCPKG_ROOT d:\Local\vcpkg```   
+## Check installed software.
+   1. It is advised to reboot the PC after installing the required software, to ensure that the environment variables and pths are updated. 
+   2. Visual Studio: Run ```start devenv``` in command window (Do not use powershell) and wait till visual studio starts. If visual studio is not started, check its instalation and ensure that it is installed. 
+   3. CMake: Open a command window (Do not use powershell) and run ```cmake --version```, if the cmake is installed properly, it should show it version which should be higher than 3.29.3
+   4. vcpkg: Open a command windows (Do not use powershell) and use this command to show the environment variable: ```echo %VCPKG_ROOT%``` and check that it points to the folder that vcpkg is installed. 
+   
 
 # Creating 'Hello word' project
 To create your first project, run create_project.bat in SampleCode/HelloWord.  
