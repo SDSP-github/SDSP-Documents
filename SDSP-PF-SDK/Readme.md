@@ -19,27 +19,29 @@ Install hardware into PC and ensure that PolarFire Driver is installed and the b
    
    For example, if the vcpkg is installed in ```d:\Local\vcpkg``` the environmental variable can se set using this command in command prompt window: ```setx VCPKG_ROOT d:\Local\vcpkg```   
 ## Check installed software.
-   1. It is advised to reboot the PC after installing the required software, to ensure that the environment variables and pths are updated. 
-   2. Visual Studio: Run ```start devenv``` in command window (Do not use powershell) and wait till visual studio starts. If visual studio is not started, check its instalation and ensure that it is installed. 
-   3. CMake: Open a command window (Do not use powershell) and run ```cmake --version```, if the cmake is installed properly, it should show it version which should be higher than 3.29.3
+   1. It is advised to reboot the PC after installing the required software, to ensure that the environment variables and paths are updated. 
+   2. Visual Studio: Run ```start devenv``` in command window (Do not use powershell) and wait till visual studio starts. If visual studio is not started, check its installation and ensure that it is installed. 
+   3. CMake: Open a command window (Do not use powershell) and run ```cmake --version```, if the cmake is installed properly, it should show its version which should be equal or higher than 3.29.3
    4. vcpkg: Open a command windows (Do not use powershell) and use this command to show the environment variable: ```echo %VCPKG_ROOT%``` and check that it points to the folder that vcpkg is installed. 
    
 
-# Creating 'Hello word' project
-To create your first project, run create_project.bat in SampleCode/HelloWord.  
-Open the generated project (helloWorld.sln) in build directory and run it.    
-Read code in `main.cpp` to understand how to initialize SDK and how to check if it is initialized.
+# Creating 'Hello SDK' project
+To create your first project, run create_project.bat in SampleCode/HelloSDK.  
+Open the generated project (helloSDK.sln) in build directory and run it.    
+Read code in `main.cpp` to understand how to initialize SDK and how to check if it is initialized properly.
 
 # Enumerating devices
 The project `EnumerateDevice` shows how to use SDK to enumerate devices and find how many device is present in the host system. Please note that the SDK will only enumerate SundanceDSP boards and not boards manufactured by other companies. 
 
 # Direct memory access
 This project shows how you can read and write to a specific memory location on the FPGA. 
-The system first write 10 X 32 bit words to the LSRAM at offset 0 and then read them back. The project then do the same process with DDR4 (writing 10 X 32 bit words to DDR4 at offset 0 and read them back). The code uses direct memory access and is suitable for reading and writing small number of words. 
+The system first write 10 X 32 bit words to the LSRAM at offset 0 and then read them back.   
+The project then do the same process with DDR4 (writing 10 X 32 bit words to DDR4 at offset 0 and read them back). The code uses direct memory access and is suitable for reading and writing small number of words. 
 
 # DMA memory access
-This project shows how you can read and write to a specific memory location on the FPGA using DMA. 
-The system first write 1024 X 32 bit words to the LSRAM at offset 0 and then read them back. The project then do the same process with DDR4 (writing 1024 X 32 bit words to DDR4 at offset 0 and read them back). The code uses DMA and is suitable for reading and writing small number of words. 
+This project shows how you can read and write to a specific memory location on the FPGA using DMA.  
+The system first write 1024 X 32 bit words to the LSRAM at offset 0 and then read them back.    
+The project then do the same process with DDR4 (writing 1024 X 32 bit words to DDR4 at offset 0 and read them back). The code uses DMA and is suitable for reading and writing small number of words. 
 
 ## Notes: 
 1. There are some overhead in setting up DMA engine, so if you want to read or write a small number of registers in the FPGA, it is faster to use direct memory access. For larger data transfer use DMA.

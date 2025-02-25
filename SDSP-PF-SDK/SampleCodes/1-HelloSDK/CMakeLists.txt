@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(HelloWorld)
+project(HelloSDK)
 
 # Get and normalize the SDK root directory from the environment variable
 file(TO_CMAKE_PATH "$ENV{SDSP-PF-SDK-Root}" SDSP_PF_SDK_ROOT)
